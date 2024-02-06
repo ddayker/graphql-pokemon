@@ -1,0 +1,14 @@
+*.apk
+*.ap_
+*.aab
+*.dex
+bin/
+gen/
+local.properties
+*.iml
+.idea
+.gradle
+build/
+.navigation
+captures/
+output.json
