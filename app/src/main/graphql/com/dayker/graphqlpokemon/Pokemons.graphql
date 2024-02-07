@@ -1,0 +1,14 @@
+query Pokemons($limit: Int!, $offset: Int!) {
+    pokemon : pokemon_v2_pokemon(limit: $limit,offset: $offset) {
+        id : id
+        name : name
+        type: pokemon_v2_pokemontypes(limit: 1) {
+            pokemon_v2_type {
+                name
+            }
+        }
+        img : pokemon_v2_pokemonsprites {
+            sprites(path: "other.home")
+        }
+    }
+}

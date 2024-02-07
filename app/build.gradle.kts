@@ -1,6 +1,15 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.daggerHiltAndroid)
+    alias(libs.plugins.apollographql).version(libs.versions.apollo)
+    kotlin("kapt")
+}
+
+apollo {
+    service("service") {
+        packageName.set("com.dayker.graphqlpokemon")
+    }
 }
 
 android {
@@ -58,7 +67,11 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+//    implementation(libs.androidx.material3)
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.foundation.android)
+    implementation(libs.androidx.material3.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,4 +79,17 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    kapt(libs.androidx.hilt.compiler)
+    implementation(libs.androidx.hilt.work)
+    implementation(libs.androidx.hilt.navigation.compose)
+
+    // apollo
+    implementation(libs.apollo3.apollo.runtime)
+
+    // navigation
+    implementation(libs.androidx.navigation.compose)
 }

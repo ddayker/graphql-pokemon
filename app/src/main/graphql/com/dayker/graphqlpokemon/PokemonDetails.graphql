@@ -1,0 +1,22 @@
+query PokemonDetails($id : Int!) {
+    pokemon: pokemon_v2_pokemon(where: {id: {_eq: $id}}) {
+        id
+        name
+        height
+        weight
+        stats : pokemon_v2_pokemonstats {
+            pokemon_v2_stat {
+                name
+            }
+            base_stat
+        }
+        type: pokemon_v2_pokemontypes(limit: 1) {
+            pokemon_v2_type {
+                name
+            }
+        }
+        img : pokemon_v2_pokemonsprites {
+            sprites(path: "other.home")
+        }
+    }
+}
