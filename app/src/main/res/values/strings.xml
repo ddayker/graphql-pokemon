@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">GraphQLPokemon</string>
+    <string name="an_error">An error ;(</string>
+    <string name="pokemon_not_found">Pokemon not found :(</string>
+    <string name="height">Height</string>
+    <string name="cm">" cm"</string>
+    <string name="kg">" kg"</string>
+    <string name="weight">Weight</string>
+    <string name="type">Type</string>
+    <string name="health">Health</string>
+    <string name="attack">Attack</string>
+    <string name="defence">Defence</string>
 </resources>

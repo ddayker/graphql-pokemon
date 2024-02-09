@@ -55,7 +55,7 @@ class DetailsViewModel @Inject constructor(
         }
     }
 
-    fun onBackClicked(id: Int) {
+    fun onBackClicked() {
         viewModelScope.launch {
             _actionFlow.emit(DetailsScreenAction.GoBack)
         }

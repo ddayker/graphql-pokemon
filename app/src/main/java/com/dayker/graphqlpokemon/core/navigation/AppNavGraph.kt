@@ -5,6 +5,7 @@ import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.scaleIn
 import androidx.compose.animation.scaleOut
+import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -21,6 +22,7 @@ import com.dayker.graphqlpokemon.presentation.home.HomeScreen
 @Composable
 fun appNavGraph(
     navController: NavHostController,
+    windowSizeClass: WindowSizeClass
 ) {
     NavHost(
         navController = navController,
@@ -54,7 +56,7 @@ fun appNavGraph(
                 scaleOutAnimation()
             }
         ) {
-            DetailsScreen(navController = navController)
+            DetailsScreen(navController = navController, windowSize = windowSizeClass)
         }
     }
 }

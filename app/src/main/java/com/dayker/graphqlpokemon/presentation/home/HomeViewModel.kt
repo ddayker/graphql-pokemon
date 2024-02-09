@@ -67,7 +67,7 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun onPokemonClicked(id: Int) {
+    fun onItemClicked(id: Int) {
         viewModelScope.launch {
             _actionFlow.emit(HomeScreenAction.ShowPokemonDetails(id = id))
         }
